@@ -1,0 +1,51 @@
+<style>
+/* Card */
+.card{
+  background-color: #fff;
+  width: 200px;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 3px;
+  -webkit-box-shadow: 5px 4px 12px 0px rgba(0, 0, 0, .15), -3px -3px 10px -3px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 5px 4px 12px 0px rgba(0, 0, 0, .15), -3px -3px 10px -3px rgba(255, 255, 255, .5);
+  box-shadow: 5px 4px 12px 0px rgba(0, 0, 0, .15), -3px -3px 10px -3px rgba(255, 255, 255, .5);
+}
+.card__img{
+  position: relative; 
+  height: 100px; 
+  width: 100%;
+  margin-bottom: 20px;
+  
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .15), -2px -2px 8px -2px rgba(255, 255, 255, .5);
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .15), -2px -2px 8px -2px rgba(255, 255, 255, .5);
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .15), -2px -2px 8px -2px rgba(255, 255, 255, .5); 
+}
+.card__img img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+/* /Card */
+</style>
+
+<div class="card">
+  <div class="card__img">
+    <picture>
+      <img src="1.jpg" alt="descrip">
+    </picture>
+  </div>
+  <div class="card__text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni impedit aperiam quo quaerat soluta veniam sint, eveniet eum iste tempore.
+  </div>
+</div>

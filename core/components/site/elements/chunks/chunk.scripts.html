@@ -1,18 +1,29 @@
-{'MinifyX.javascript' | placeholder}
+<!-- Версия для слабовидящих -->
 <script>
-    $(document).ready(function() {
-        // Removing AjaxForm success message
-        if (typeof(AjaxForm) != 'undefined') {
-            AjaxForm.Message.success = function() {};
-        }
-    });
-    
-    // Show AjaxForm success message in modal
-    $(document).on('af_complete', function(event, response) {
-        var form = response.form;
-        if (response.success) {
-            $.fancybox.close();
-            $.fancybox.open('<div class="popup" id="popup-call"><div class="popup-title">' + response.message + '</div></div>');
-        }
-    });
+    const watchs = document.getElementsByClassName("watch");
+    const html = document.getElementsByTagName("html");
+    [].forEach.call(watchs, function (watch) {
+        watch.addEventListener("click", () =>{
+            if (html[0].classList.contains("colorBlind")){
+                watch.style.borderWidth = "0px";
+                watch.style.borderColor = "#fff";
+                html[0].classList.remove("colorBlind");
+            } else {
+                watch.style.border = '4px solid #f00';
+                html[0].classList.add("colorBlind");
+            }
+       });
+    });    
 </script>
+<!-- /Версия для слабовидящих -->
+
+<!-- Loading css -->
+[[-<script defer>
+    var giftofspeed = document.createElement('link');
+    giftofspeed.rel = 'stylesheet';
+    giftofspeed.href = 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css';
+    giftofspeed.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(giftofspeed, godefer);
+  </script>]]
+<!-- /Loading css -->

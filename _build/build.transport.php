@@ -47,5 +47,5 @@ $addons = array(
             'controlErrorLog' => '1.3.1-pl'
         )),
 );
-$builder = new siteBuilder('liza-podliza', '1.5.3', 'pl', $resolvers, $addons);
+$builder = new siteBuilder('infocenter', '1.5.3', 'pl', $resolvers, $addons);
 $builder->build();

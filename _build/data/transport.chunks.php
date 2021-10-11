@@ -9,68 +9,36 @@ $tmp = array(
         'file' => 'head',
         'description' => ''
     ),
-    'menu' => array(
-        'file' => 'menu',
-        'description' => ''
-    ),
-    'child_list' => array(
-        'file' => 'child_list',
-        'description' => ''
-    ),
     'header' => array(
         'file' => 'header',
-        'description' => ''
-    ),
-    'content' => array(
-        'file' => 'content',
-        'description' => ''
-    ),
-    'content_default' => array(
-        'file' => 'content_default',
-        'description' => ''
-    ),
-    'content_main' => array(
-        'file' => 'content_main',
-        'description' => ''
-    ),
-    'content_spec' => array(
-        'file' => 'content_spec',
-        'description' => ''
-    ),
-    'content_spec_list' => array(
-        'file' => 'content_spec_list',
-        'description' => ''
-    ),
-    'aside' => array(
-        'file' => 'aside',
         'description' => ''
     ),
     'footer' => array(
         'file' => 'footer',
         'description' => ''
     ),
-    'contact_form' => array(
-        'file' => 'contact_form',
-        'description' => ''
-    ),
-    'form.contact_form' => array(
-        'file' => 'form_contact_form',
-        'description' => ''
-    ),
-    'tpl.contact_form' => array(
-        'file' => 'tpl_contact_form',
-        'description' => ''
-    ),
-    'gallery' => array(
-        'file' => 'gallery',
-        'description' => ''
-    ),
-    'block.gallery' => array(
-        'file' => 'block_gallery',
-        'description' => ''
-    ),
     'scripts' => array(
         'file' => 'scripts',
+        'description' => ''
+    ),
+    'block_feedback' => array(
+        'file' => 'block_feedback',
+        'description' => ''
+    ),
+    'block_text' => array(
+        'file' => 'block_text',
+        'description' => ''
+    ),
+    'schetchiki' => array(
+        'file' => 'schetchiki',
+        'description' => ''
+    ),
+    'style' => array(
+        'file' => 'style',
+        'description' => ''
+    ),
+    'tpl_card' => array(
+        'file' => 'tpl_card',
         'description' => ''
     ),
 );
