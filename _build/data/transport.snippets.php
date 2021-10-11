@@ -5,8 +5,8 @@
 $snippets = array();
 
 $tmp = array(
-    'rtrim' => array(
-        'file' => 'rtrim',
+    'bitrix_form' => array(
+        'file' => 'bitrix_form',
         'description' => ''
     ),
 );
