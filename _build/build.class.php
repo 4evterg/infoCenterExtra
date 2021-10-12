@@ -89,6 +89,7 @@ class siteBuilder {
         }
     }
     
+    // #X Категория!
     public function prepareVehicle(&$builder) {
         /* create category */
         $this->modx->log(xPDO::LOG_LEVEL_INFO, 'Created category.');

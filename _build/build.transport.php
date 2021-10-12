@@ -19,17 +19,17 @@ $resolvers = array(
 );
 $addons = array(
     array('name' => '', 'packages' => array(
-            'simpleUpdater' => '2.1.4-rc',
+            'simpleUpdater' => '2.1.1-beta',
             'FormIt' => '4.2.1-pl',
             'TinyMCE Rich Text Editor' => '1.2.1-pl',
-            'Collections' => '3.6.0-pl',
+            // 'Collections' => '3.6.0-pl',
             'Console' => '2.2.2-pl',
             'MIGX' => '2.12.0-pl',
             'translit' => '1.0.0-beta',
             'VersionX' => '2.2.1-pl',
             'ClientConfig' => '2.1.0-pl',            
             'BackupMODX' => '3.0.4-pl',     
-            'Gallery' => '1.7.1-pl',
+            // 'Gallery' => '1.7.1-pl',
             'SmushIt' => '1.0.0-beta',
             'filetranslit' => '0.1.2-pl2'
         )),
