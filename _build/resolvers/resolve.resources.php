@@ -24,7 +24,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 $chunk->save();
             }
         }
-    
+        // #X Get Template 
         if (isset($options['site_template_name']) && !empty($options['site_template_name'])) {
             $template = $modx->getObject('modTemplate', array('templatename' => $options['site_template_name']));
         }
@@ -277,7 +277,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                     ")
                 ));
                 $resource->save();
-                $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
+                $resource->setTVValue('img', '/testimg/' . 'sa.png');
             }
         }
         /* !#S Алкоголизм */
@@ -374,7 +374,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                     ")
                 ));
                 $resource->save();
-                $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
+                $resource->setTVValue('img', '/testimg/' . 'sn.png');
             }
         }
         /* !#S Наркомания */
@@ -451,7 +451,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                     ")
                 ));
                 $resource->save();
-                $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
+                $resource->setTVValue('img', '/testimg/' . 's.png');
             }
         }
         /* !#S Другие зависимости */
@@ -532,10 +532,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                     ")
                 ));
                 $resource->save();
-                // #X тоже мб убрать?
-                $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
-
-        
+                $resource->setTVValue('img', '/testimg/' . 'placeholder.png');        
             }
                     // #N Добавляем врачей
                     $resource->setTVValue('show_on_page', 'content||gallery');
@@ -576,85 +573,10 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                             ")
                         ));
                         $resource->save();
-                        $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
+                        $resource->setTVValue('img', '/testimg/' . 'd' . $i . '.png');
                     }
         }
         /* !#S Клиника */
-               /* #S Другие зависимости */
-        $alias = 'drugie-zavisimosti';
-        $parent = 0;
-        $addspecs = false;
-            $pagetitle = 'Другие зависимости';
-            $menutitle = 'Другие зависимости';
- 
-        if (!$resource = $modx->getObject('modResource', array('alias' => $alias))) {
-            $resource = $modx->newObject('modResource');
-            $addspecs = true;
-        }
-        $resource->fromArray(array(
-            'class_key'    => 'modDocument',
-            'menuindex'    => 2,
-            'pagetitle'    => $pagetitle, // 'Наши сотрудники',
-            'menutitle'    => $menutitle, // 'Специалисты',
-            'isfolder'     => 1,
-            'alias'        => $alias,
-            'uri'          => $alias,
-            'uri_override' => 0,
-            'published'    => 1,
-            'publishedon'  => time(),
-            'hidemenu'     => 0,
-            'richtext'     => 0,
-            'parent'       => $parent,
-            'template'     => $templateId,
-            'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', "
-                <p></p>
-            ")
-        ));
-        $resource->save();
-        $specAlias = $alias;
-        
-        if ($addspecs) {
-            $resource->setTVValue('show_on_page', 'content||gallery');
-            $specParent = $resource->get('id');
-            $pagetitle = array(
-                    'Игромания',
-                    'Созависимость',
-                ); 
-            $alias = array(
-                'igromania',
-                'sozavisimost',
-            );
-            for ($i = 1; $i <= sizeof($pagetitle); $i++) {
-                /* Специалист 1 */
-                // $alias = 'spec-' . $i;
-                if (!$resource = $modx->getObject('modResource', array('alias' => $alias))) {
-                    $resource = $modx->newObject('modResource');
-                }
-                $resource->fromArray(array(
-                    'class_key'    => 'modDocument',
-                    'menuindex'    => $i,
-                    'pagetitle'    => $pagetitle[$i-1], // 'Сотрудник ' . $i,
-                    'isfolder'     => 0,
-                    'alias'        => $alias[$i-1],
-                    'uri'          => $specAlias . '/' . $alias,
-                    'uri_override' => 0,
-                    'published'    => 1,
-                    // #X мб поменять?
-                    'publishedon'  => time() - 60 * 60 * $i,
-                    'hidemenu'     => 0,
-                    'richtext'     => 1,
-                    'parent'       => $specParent,
-                    'template'     => $templateId,
-                    'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', "
-                        <p></p>
-                    ")
-                ));
-                $resource->save();
-                $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
-            }
-        }
-        /* !#S Другие зависимости */
-
 
 
        /* #S Статьи */
@@ -727,7 +649,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                    ")
                ));
                $resource->save();
-               $resource->setTVValue('img', $modx->getOption('assets_url') . 'components/' . strtolower($options['site_category']) . '/web/img/spec' . $i . '.png');
+               $resource->setTVValue('img', '/testimg/' . 'a' . $i . '.png');
            }
        }
        /* !#S Статьи */
@@ -1098,6 +1020,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', $content)
         ));
         $resource->save();
+        $resource->setTVValue('img', '/testimg/' . 'placeholder.png');
         /* !#S Covid */
 
 
@@ -1107,7 +1030,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         $parent = 0;
             $pagetitle = 'Пользовательское соглашение';
             $content = '
-            Настоящее Пользовательское Соглашение (далее Соглашение) регулирует отношения между «_______________» (далее Сайт или Администрация) с одной стороны и пользователем сайта с другой.
+            Настоящее Пользовательское Соглашение (далее Соглашение) регулирует отношения между «[[++site_name]]» (далее Сайт или Администрация) с одной стороны и пользователем сайта с другой.
 
             Сайт не является средством массовой информации.
             
@@ -1198,6 +1121,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', $content)
         ));
         $resource->save();
+        $resource->setTVValue('img', '/testimg/' . 'placeholder.png');
         /* !#S Пользовательское соглашение */
 
 
@@ -1229,6 +1153,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', $content)
         ));
         $resource->save();
+        $resource->setTVValue('img', '/testimg/' . 'placeholder.png');
         /* !#S Контакты */
 
 
@@ -1238,7 +1163,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         $parent = 0;
             $pagetitle = 'Политика обработки данных';
             $content = '
-            Соглашаясь с Условиями работы сайта (далее Условия) и оставляя свои данные на сайте «_________» (далее Сайт), путем заполнения полей онлайн-заявки Пользователь:
+            Соглашаясь с Условиями работы сайта (далее Условия) и оставляя свои данные на сайте «[[++site_name]]» (далее Сайт), путем заполнения полей онлайн-заявки Пользователь:
 
 - подтверждает, что указанные им данные принадлежат лично ему;
 - признает и подтверждает, что он внимательно и в полном объеме ознакомился с настоящими Условиями;
@@ -1261,7 +1186,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 
 Данные, собираемые на сайте, используются только для исполнения конкретного договора.
 
-Отзыв согласия с Условиями работы сайта может быть осуществлен путем направления Пользователем соответствующего распоряжения в простой письменной форме на адрес электронной почты: info@____________
+Отзыв согласия с Условиями работы сайта может быть осуществлен путем направления Пользователем соответствующего распоряжения в простой письменной форме на адрес электронной почты: info@[[++site_url]]
 
 Сайт не несет ответственности за использование (как правомерное, так и неправомерное) третьими лицами информации, размещенной Пользователем на Сайте, включая её воспроизведение и распространение, осуществленные всеми возможными способами.
 
@@ -1287,6 +1212,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', $content)
         ));
         $resource->save();
+        $resource->setTVValue('img', '/testimg/' . 'placeholder.png');
         /* !#S Политика обработки данных */
 
 
@@ -1374,6 +1300,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             'content'      => preg_replace(array('/^\n/', '/[ ]{2,}|[\t]/'), '', $content)
         ));
         $resource->save();
+        $resource->setTVValue('img', '/testimg/' . 'placeholder.png');
         $res404 = $resource->get('id');
         
         /* HTML карта сайта sitemap */
